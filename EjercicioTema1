@@ -1,0 +1,40 @@
+package com.example;
+
+public class HolaMundo {
+
+    public static void main(String[] args) {
+
+        //Tipos de Datos:
+
+        //Enteros
+
+        byte dato1=1;
+        System.out.println(dato1);
+        short dato2=23;
+        System.out.println(dato2);
+        int dato3=34;
+        System.out.println(dato3);
+        long dato4=40555660;
+        System.out.println(dato4);
+
+        //Decimales
+        float dato5=5.5f;
+        System.out.println(dato5);
+        double dato6=5.5d;
+        System.out.println(dato6);
+
+        //Boolean
+        boolean dato7=true;
+        System.out.println(dato7);
+        boolean dato8=false;
+        System.out.println(dato8);
+
+        //Texto
+
+        char dato9='a';
+        System.out.println(dato9);
+        String dato10="hola";
+        System.out.println(dato10);
+    
+    }
+}
