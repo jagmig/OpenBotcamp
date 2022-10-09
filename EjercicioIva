@@ -1,0 +1,57 @@
+package com.example;
+
+import java.util.Scanner;
+
+public class PrecioIva {
+
+    public static void main(String[] args) {
+
+
+        System.out.println("Elige una opción: ");
+        System.out.println("1. Zapatos= $300.00");
+        System.out.println("2. Pantalón= $500.00");
+        System.out.println("3. Camisa= $700");
+        Scanner miScanner = new Scanner(System.in);
+        int opcion=miScanner.nextInt();
+
+        if(opcion==1){
+
+            precioIvaZapatos(300);
+
+        } else if (opcion==2) {
+
+            precioIvaPantalon(500);
+
+        }else if (opcion==3) {
+
+            precioIvaCamisa(700);
+
+        }else{
+            System.out.println("Opción inválida");
+        }
+    }
+
+    static void precioIvaCamisa(double precio){
+
+        precio=precio;
+        double precioIva=precio*iva;
+        System.out.println("El precio con iva de la camisa es: "+ (precioIva+precio));
+    }
+
+    static void precioIvaPantalon(double precio){
+
+        precio=precio;
+        double precioIva=precio*iva;
+        System.out.println("El precio con iva del pantalón es: " + (precioIva+precio));
+    }
+
+    static void precioIvaZapatos(double precio){
+
+        precio=precio;
+        double precioIva=precio*iva;
+        System.out.println("El precio con iva de los zapatos es: " + (precioIva+precio));
+    }
+
+    double precio;
+    static double iva=.16;
+}
