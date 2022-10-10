@@ -1,0 +1,15 @@
+package com.example;
+
+public class EjercicioSesión3 {
+
+    public static void main(String[] args) {
+
+        String nombres[] = {"Jorge", "Pepe", "Juan", "Anthony"};
+
+        for (int i = 0; i < nombres.length; i++) {
+
+            System.out.print(nombres[i] + " ");
+        }
+    }
+
+}
