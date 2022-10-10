@@ -1,0 +1,84 @@
+package com.example;
+
+public class EjercicioTema4 {
+
+    public static void main(String[] args) {
+
+
+        SmartDevice device = new SmartDevice();
+        device.descripcion="Es un Dispositivo inteligente";
+        device.tipo="es de tipo tablet";
+        System.out.println(device.descripcion + " " + device.tipo);
+
+        SmartPhone phone = new SmartPhone();
+        phone.descripcion="SmartPhone";
+        phone.tipo="Iphone";
+        phone.modelo="Iphone 14 Plus";
+        phone.wifi=true;
+        System.out.println("El telefono es un: " + phone.descripcion + " de tipo " + phone.tipo + ", modelo: " + phone.modelo + " y tiene wifi: " + phone.wifi);
+
+        SmartWatch watch = new SmartWatch();
+        watch.descripcion="SmartWatch";
+        watch.tipo="Relog";
+        watch.modelo="Samsung Galaxy Watch 5";
+        watch.wifi=false;
+        watch.pantalla=1.4;
+        watch.cardio=true;
+
+        System.out.println("El dispositivo es un: " + watch.descripcion + " es de tipo: " + watch.tipo + ", modelo: " + watch.modelo + ",  tamaño de pantalla: " + watch.pantalla + " pulgadas, tiene wifi? " + watch.wifi + " y mide el cardio? " + watch.cardio);
+
+
+    }
+
+    static class SmartDevice{
+    String tipo;
+    String descripcion;
+
+    public SmartDevice(){
+
+    }
+
+    public SmartDevice(String tipo, String descripcion){
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+       }
+    }
+
+    static class SmartPhone extends SmartDevice {
+
+        String marca;
+        String modelo;
+        boolean wifi;
+
+        public SmartPhone(){
+
+        }
+        public SmartPhone(String marca, String descripcion, boolean wifi){
+            this.marca = marca;
+            this.modelo = marca;
+            this.wifi = true;
+        }
+
+    }
+
+    static class SmartWatch extends SmartPhone {
+
+        String color;
+        double pantalla;
+        boolean cardio;
+
+        public SmartWatch(){
+
+        }
+
+        public SmartWatch(String color, double pantalla, boolean cardio){
+            this.color = color;
+            this.pantalla = pantalla;
+            this.cardio = false;
+        }
+
+
+
+
+    }
+}
