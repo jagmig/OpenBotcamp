@@ -1,0 +1,161 @@
+package com.example;
+
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.*;
+
+
+public class Ejercicios_temas_7_8_9 {
+
+    public static void main(String[] args) {
+
+        String texto = "Hola Mundo";
+        System.out.println("El texto invertido es: " + reverse(texto));
+
+        demoArray();
+
+        vectorDemo();
+
+        arrayLisDemo();
+
+        try{
+            dividePorCero(5,0);
+        }catch(ArithmeticException e){
+
+            System.out.println("Esto no puede hacerse");
+        }finally {
+            System.out.println("Demo de Código");
+        }
+
+        InputsDemo();
+
+
+    }
+
+    public static String reverse(String texto) {
+
+        String cadenaInvertida = "";
+
+        for (int i = texto.length() - 1; i >= 0; i--) {
+            cadenaInvertida = cadenaInvertida + texto.charAt(i);
+
+        }
+        return cadenaInvertida;
+    }
+
+    public static void demoArray() {
+
+        String arrayString[] = {"Hola", "Jorge", "Raul"};
+
+        for (String array : arrayString) {
+
+            System.out.println(array);
+
+
+        }
+
+        int arrayBidi[][] = new int[2][4];
+
+        arrayBidi[0][0] = 0;
+        arrayBidi[0][1] = 1;
+        arrayBidi[0][2] = 2;
+        arrayBidi[0][3] = 3;
+
+        arrayBidi[1][0] = 10;
+        arrayBidi[1][1] = 20;
+        arrayBidi[1][2] = 30;
+        arrayBidi[1][3] = 40;
+
+        for (int i = 0; i < arrayBidi.length; i++) {
+            for (int j = 0; j < arrayBidi[i].length; j++) {
+                System.out.println("Posición: [" + i + "][" + j + "] y contiene el valor " + arrayBidi[i][j]);
+            }
+        }
+
+    }
+
+    public static void vectorDemo() {
+
+        Vector<Integer> miVector = new Vector<Integer>();
+
+        miVector.add(1);
+        miVector.add(2);
+        miVector.add(3);
+        miVector.add(4);
+        miVector.add(5);
+
+        miVector.remove(1);
+        miVector.remove(1);
+
+        System.out.println("La información del vector es: " + miVector);
+    }
+    //La desventaja de tener un vector con capacidad por defecto y luego tener que añadirle mas elementos p.ej. 1000 es qu
+    // Al crear otro "array subyacente" se tiene que copiar la información del array anterior y eso consume muchos recursos
+
+    public static void arrayLisDemo() {
+
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        arrayList.add("Elemento1");
+        arrayList.add("Elemento2");
+        arrayList.add("Elemento3");
+        arrayList.add("Elemento4");
+
+        LinkedList<String> listaEnlazada = new LinkedList<>(arrayList);
+
+        for (String e : listaEnlazada) {
+
+            System.out.println(e);
+        }
+
+        ArrayList<Integer> arrayList2 = new ArrayList<Integer>();
+
+        for (int i = 0; i < 10; i++) {
+            arrayList2.add(i);
+            System.out.println(arrayList2);
+        }
+
+        for(int j = 0; j < arrayList2.size(); j++) {
+                if(arrayList2.get(j)%2==0){
+                    arrayList2.remove(j);
+                    System.out.println(arrayList2);
+                }
+            }
+       }
+
+       public static int dividePorCero(int a, int b) throws ArithmeticException {
+
+        int resultado=0;
+
+        try {
+
+            resultado=a/b;
+
+        }catch(ArithmeticException e){
+
+            throw new ArithmeticException();
+
+        }
+           return resultado;
+       }
+
+       public static void InputsDemo() {
+
+        try{
+
+            InputStream filein =new FileInputStream("C:/Users/Jorge Gomez/Downloads/Demo.txt");
+            byte[] data = filein.readAllBytes();
+
+            PrintStream fileout = new PrintStream("C:/Users/Jorge Gomez/Downloads/Destino.txt");
+            fileout.write(data);
+            fileout.close();
+
+        }catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+
+        }
+
+   }
+}
